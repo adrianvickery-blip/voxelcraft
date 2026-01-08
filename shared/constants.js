@@ -1,8 +1,9 @@
-export const CHUNK_SIZE = 16;
-export const WORLD_HEIGHT = 64;
+// Global constants - no module system
+const CHUNK_SIZE = 16;
+const WORLD_HEIGHT = 64;
 
 // Blocks
-export const BLOCK = {
+const BLOCK = {
   AIR: 0,
   GRASS: 1,
   DIRT: 2,
@@ -36,13 +37,13 @@ export const BLOCK = {
   ARROW: 30,
 };
 
-export const ATLAS_COLS = 4;
-export const ATLAS_ROWS = 4;
-export const TILE_SIZE_U = 1 / ATLAS_COLS;
-export const TILE_SIZE_V = 1 / ATLAS_ROWS;
+const ATLAS_COLS = 4;
+const ATLAS_ROWS = 4;
+const TILE_SIZE_U = 1 / ATLAS_COLS;
+const TILE_SIZE_V = 1 / ATLAS_ROWS;
 
 // Atlas tile indices (0..15) are independent of block IDs
-export const BLOCK_UV = {
+const BLOCK_UV = {
   [BLOCK.GRASS]:         { top: 0, side: 1, bottom: 2 },
   [BLOCK.DIRT]:          { all: 2 },
   [BLOCK.STONE]:         { all: 3 },
@@ -51,31 +52,31 @@ export const BLOCK_UV = {
   [BLOCK.LEAVES]:        { all: 6 },
   [BLOCK.LOG]:           { side: 7, top: 8, bottom: 8 },
   [BLOCK.WATER]:         { all: 9 },
-  [BLOCK.CHEST]:         { all: 5 },  // reuse planks texture
+  [BLOCK.CHEST]:         { all: 5 },
   [BLOCK.IRON_ORE]:      { all: 10 },
   [BLOCK.DIAMOND_ORE]:   { all: 11 },
   [BLOCK.GLASS]:         { all: 12 },
   [BLOCK.BRICKS]:        { all: 13 },
-  [BLOCK.IRON_BLOCK]:    { all: 10 }, // reuse ore tiles for now
+  [BLOCK.IRON_BLOCK]:    { all: 10 },
   [BLOCK.DIAMOND_BLOCK]: { all: 11 },
-  [BLOCK.CACTUS]:        { all: 6 },  // reuse leaves
-  [BLOCK.FLOWER]:        { all: 0 },  // reuse grass-top
-  [BLOCK.SNOW]:          { all: 4 },  // reuse sand-ish
-  [BLOCK.FURNACE]:       { all: 3 },  // reuse stone
-  [BLOCK.COAL_ORE]:      { all: 3 },  // reuse stone
-  [BLOCK.CONCRETE_WHITE]:{ all: 2 },  // reuse dirt (light-ish)
-  [BLOCK.CONCRETE_RED]:  { all: 13 }, // reuse bricks
-  [BLOCK.CONCRETE_BLUE]: { all: 12 }, // reuse glass
-  [BLOCK.GLOWSTONE]:     { all: 4 },  // reuse sand-ish
+  [BLOCK.CACTUS]:        { all: 6 },
+  [BLOCK.FLOWER]:        { all: 0 },
+  [BLOCK.SNOW]:          { all: 4 },
+  [BLOCK.FURNACE]:       { all: 3 },
+  [BLOCK.COAL_ORE]:      { all: 3 },
+  [BLOCK.CONCRETE_WHITE]:{ all: 2 },
+  [BLOCK.CONCRETE_RED]:  { all: 13 },
+  [BLOCK.CONCRETE_BLUE]: { all: 12 },
+  [BLOCK.GLOWSTONE]:     { all: 4 },
 };
 
-export const GAME_MODE = {
+const GAME_MODE = {
   SURVIVAL: "survival",
   CREATIVE: "creative",
 };
 
 // Item types for hotbar/inventory
-export const ITEM = {
+const ITEM = {
   NONE: 0,
   DIRT: 1,
   PLANKS: 2,
@@ -109,7 +110,7 @@ export const ITEM = {
   ARROW: 30,
 };
 
-export const DEFAULT_WORLD_CONFIG = {
+const DEFAULT_WORLD_CONFIG = {
   baseHeight: 8,
   terrainAmplitude: 6,
 };
