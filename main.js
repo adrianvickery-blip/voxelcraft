@@ -1,5 +1,5 @@
-import Engine from "./engine/Engine.js";
-import { GAME_MODE, DEFAULT_WORLD_CONFIG } from "./shared/constants.js";
+// Main initialization - no module system
+// Globals: Engine, GAME_MODE, DEFAULT_WORLD_CONFIG available from other scripts
 
 let engine = null;
 
