@@ -144,6 +144,34 @@
       </div>
     </div>
     <div id="hint">Click the game to lock mouse • WASD to move • Space to jump • LMB break • RMB place (dirt)</div>
-    <script type="module" src="./main.js"></script>
+    
+    <!-- Load Three.js from CDN -->
+    <script src="https://unpkg.com/three@0.165.0/build/three.min.js"></script>
+    
+    <!-- Load all game scripts in dependency order -->
+    <!-- 1. Constants first -->
+    <script src="./shared/constants.js"></script>
+    
+    <!-- 2. Utilities and helpers -->
+    <script src="./world/World.js"></script>
+    <script src="./world/ChunkManager.js"></script>
+    <script src="./world/Chest.js"></script>
+    <script src="./render/Renderer.js"></script>
+    <script src="./render/HeldItem.js"></script>
+    <script src="./interaction/Raycast.js"></script>
+    <script src="./interaction/BlockActions.js"></script>
+    <script src="./entities/MobManager.js"></script>
+    <script src="./ui/HUD.js"></script>
+    <script src="./ui/Crafting.js"></script>
+    <script src="./ui/Inventory.js"></script>
+    <script src="./ui/Furnace.js"></script>
+    <script src="./engine/Player.js"></script>
+    <script src="./engine/GameLoop.js"></script>
+    
+    <!-- 3. Engine -->
+    <script src="./engine/Engine.js"></script>
+    
+    <!-- 4. Main initialization -->
+    <script src="./main.js"></script>
   </body>
 </html>
