@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>VoxelCraft</title>
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: #000;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      #world-menu {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top, #334 0, #000 70%);
+        color: #eee;
+        z-index: 10;
+      }
+      #world-menu .panel {
+        background: rgba(15, 16, 25, 0.95);
+        border-radius: 12px;
+        padding: 24px 28px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+        width: 360px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      #world-menu h1 {
+        margin: 0 0 12px;
+        font-size: 24px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      #world-menu p.subtitle {
+        margin: 0 0 18px;
+        font-size: 12px;
+        text-align: center;
+        opacity: 0.8;
+      }
+      #world-menu label {
+        display: block;
+        font-size: 12px;
+        margin-top: 12px;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.8;
+      }
+      #world-menu input[type="text"],
+      #world-menu select {
+        width: 100%;
+        padding: 6px 8px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(5, 6, 10, 0.9);
+        color: #eee;
+        font-size: 13px;
+      }
+      #world-menu .slider-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      #world-menu input[type="range"] {
+        flex: 1;
+      }
+      #world-menu .value-pill {
+        min-width: 40px;
+        text-align: center;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      #world-menu button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 0;
+        border-radius: 999px;
+        border: none;
+        background: linear-gradient(135deg, #4caf50, #8bc34a);
+        color: #080b06;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      #world-menu button:hover {
+        filter: brightness(1.07);
+      }
+      #world-menu button:active {
+        filter: brightness(0.96);
+      }
+      #hint {
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.75);
+        z-index: 5;
+        padding: 4px 8px;
+        background: rgba(0, 0, 0, 0.45);
+        border-radius: 999px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="world-menu">
+      <div class="panel">
+        <h1>VoxelCraft</h1>
+        <p class="subtitle">Create a world. Choose your mode. Jump in.</p>
+
+        <label for="world-name">World Name</label>
+        <input id="world-name" type="text" placeholder="New World" />
+
+        <label for="seed">Seed</label>
+        <input id="seed" type="text" placeholder="Random" />
+
+        <label for="mode">Game Mode</label>
+        <select id="mode">
+          <option value="survival">Survival</option>
+          <option value="creative">Creative</option>
+        </select>
+
+        <label>Base Height</label>
+        <div class="slider-row">
+          <input id="base-height" type="range" min="2" max="20" value="6" />
+          <span id="base-height-value" class="value-pill">6</span>
+        </div>
+
+        <label>Terrain Amplitude</label>
+        <div class="slider-row">
+          <input id="amplitude" type="range" min="0" max="10" value="3" />
+          <span id="amplitude-value" class="value-pill">3</span>
+        </div>
+
+        <button id="create-world">Create World</button>
+      </div>
+    </div>
+    <div id="hint">Click the game to lock mouse • WASD to move • Space to jump • LMB break • RMB place (dirt)</div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
